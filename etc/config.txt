@@ -1,0 +1,48 @@
+# perldoc Config::Simple
+
+errorsto=youraddr@example.com
+errorsfrom=anaddr@example.com
+
+[smtp]
+mailfrom=someone@example.com
+mailto=interestedpeople@example.com
+server=smtp.example.com
+#user=
+#pass=
+
+[smtphits]
+mailfrom=overridesdefault@example.com
+mailto=overridesdefault@example.com
+subject=Suspicious SMTP logins, $n users
+
+[radiushits]
+#mailfrom= uses default from [smtp]
+#mailto= uses default from [smtp]
+subject=Suspicious VPN logins, $n users
+
+[locationdb]
+dsn=DBI:SQLite:dbname=/opt/location-db/ip2loc.db
+#user=
+#pass=
+
+[radiusdb]
+dsn=DBI:mysql:database=radius;host=yourdb.example.com
+user=dbuser
+pass=dbpass
+db=authdb
+
+[splunk]
+# splunk web api, port 8089, check your installation
+server=https://yourserver.example.com:8089/
+user=youruser
+pass=yourpass
+
+[ldap]
+server=yourserver.example.com
+binddn='o=Your Org,c=us'
+base='o=Your Org,c=us'
+filter='(userid=$username)'
+
+[tuning]
+localnets=67.20.192.0/19,67.99.160.0/21,128.205.0.0/16,205.232.16.0/21
+localgeo="UNITED STATES", "NEW YORK", "BUFFALO (UB)", 42.886447, -78.878369
